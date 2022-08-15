@@ -1,0 +1,2 @@
+ln -s test0 test6
+chmod -h 777 al link

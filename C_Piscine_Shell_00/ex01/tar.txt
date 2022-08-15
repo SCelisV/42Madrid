@@ -1,0 +1,2 @@
+tar -cf file.tar file
+tar -xpf file.tar file
