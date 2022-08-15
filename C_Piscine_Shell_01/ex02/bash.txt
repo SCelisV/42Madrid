@@ -1,0 +1,2 @@
+sh
+$ bash find_sh.sh | cat -e
