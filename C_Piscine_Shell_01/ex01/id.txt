@@ -1,0 +1,102 @@
+man id
+
+id
+uid=1001(hadoop) gid=1001(hadoop) groups=1001(hadoop),27(sudo)
+
+id -a
+uid=1001(hadoop) gid=1001(hadoop) groups=1001(hadoop),27(sudo)
+
+id -g
+1001
+
+id -G
+1001 27
+
+id -u
+1001
+
+id --version
+id (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+Licence GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Arnold Robbins and David MacKenzie.
+
+id  ${FT_USER} 
+uid=1001(hadoop) gid=1001(hadoop) groups=1001(hadoop),27(sudo)
+
+id -G ${FT_USER}
+1001 27
+
+id -G ${FT_USER} | tr ' ' ','
+1001,27
+
+id -Gn ${FT_USER} 
+hadoop sudo
+
+id -Gn ${FT_USER} | tr ' ' ',' 
+hadoop,sudo
+
+id -Gn ${FT_USER} | tr ' ' ',' | tr -d '\n'
+hadoop,sudo
+
+groups ${FT_USER} | tr ' ' ',' | tr -d '\n'
+hadoop,sudo
+
+tr --help
+Usage: tr [OPTION]... SET1 [SET2]
+Traducir, comprimir y/o borrar caracteres de la entrada estándar,
+escribiendo en la salida estándar.
+
+  -c, -C, --complement    utilizar el complemento de SET1
+  -d, --delete            elimina los caracteres de SET1, no los traduce
+  -s, --squeeze-repeats   reemplaza cada secuencia de un carácter repetido
+                            que aparece en el último SET especificado
+                            con una sola aparición de ese carácter
+  -t, --truncate-set1     first truncate SET1 a la length of SET2
+      --help     display this help and exit
+      --version  output version information and exit
+
+SETs are specified as strings of characters.  Most represent themselves.
+Interpreted sequences are:
+
+  \NNN            character with octal value NNN (1 to 3 octal digits)
+  \\              backslash
+  \a              audible BEL
+  \b              backspace
+  \f              form feed
+  \n              new line
+  \r              return
+  \t              horizontal tab
+  \v              vertical tab
+  CHAR1-CHAR2     all characters from CHAR1 to CHAR2 in ascending order
+  [CHAR*]         in SET2, copies of CHAR until length of SET1
+  [CHAR*REPEAT]   REPEAT copies of CHAR, REPEAT octal if starting with 0
+  [:alnum:]       all letters and digits
+  [:alpha:]       all letters
+  [:blank:]       all horizontal whitespace
+  [:cntrl:]       all control characters
+  [:digit:]       all digits
+  [:graph:]       all printable characters, not including space
+  [:lower:]       all lower case letters
+  [:print:]       all printable characters, including space
+  [:punct:]       all punctuation characters
+  [:space:]       all horizontal or vertical whitespace
+  [:upper:]       all upper case letters
+  [:xdigit:]      all hexadecimal digits
+  [=CHAR=]        all characters which are equivalent to CHAR
+
+Translation occurs if -d is not given and both SET1 and SET2 appear.
+-t may be used only when translating.  SET2 is extended to length of
+SET1 by repeating its last character as necessary.  Excess characters
+of SET2 are ignored.  Only [:lower:] and [:upper:] are guaranteed to
+expand in ascending order; used in SET2 while translating, they may
+only be used in pairs to specify case conversion.  -s uses the last
+specified SET, and occurs after translation or deletion.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/tr>
+or available locally via: info '(coreutils) tr invocation'
+
