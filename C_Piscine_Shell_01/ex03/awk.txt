@@ -1551,3 +1551,69 @@ awk
 cat /etc/passwd
 cat /etc/passwd | awk -F ":" '{print $1}'
 cat /etc/passwd | awk -F ":" '{print $1 $3 $4}'
+
+mostrar la primera columna sin mostrar la primera fila:
+ps | awk 'NR>1{print $2}'
+
+mostrar los usuarios del sistema operativo borrando el resto 
+cat /etc/passwd | awk -F "delimitador" '{print $num_columna}'
+
+cat /etc/passwd | awk -F ":" '{print $1}'
+
+cat /etc/passwd | awk -F ":" '{print $1 $3 $4}'
+
+cat /etc/passwd | awk -F ":" '{print $1" "$3" "$4}'
+
+cat /etc/passwd | awk -F ":" '{print $1"\t"$3"\t"$4}'
+
+ FS «Field Separator» --> se puede fijar un delimitador
+
+cat /etc/passwd | awk 'BEGIN{FS=":";} {print $1"\t"$3"\t"$4}'
+
+Toda acción definida dentro de las llaves de BEGIN se ejecuta antes de procesar el fichero de texto
+
+awk 'BEGIN{FS=":";} {print $1"\t"$3"\t"$4}' 
+/etc/passwd o 
+cat /etc/passwd | awk -F ":" '{print $1"\t"$3"\t"$4}'
+
+OFS «Output field separator»  --> 
+
+cat /etc/passwd | awk 'BEGIN{FS=":";OFS=" - "} {print $1,$3,$4}'
+
+cat /etc/shells
+
+awk -F "/" '/^\// {print $NF}'
+
+-F "/": set el delimitador usado por awk /
+
+/^\//: 
+
+//  --> incluir la expresión regular entre los slash
+
+^\/ expresión regular --> toda línea que empiece por /
+
+{print $NF} --> Hace referencia a imprimir el último delimitador en todas las líneas que se cumpla la expresión regular ^\/
+
+awk -F "/" '/^\// {print $NF}' /etc/shells
+
+muestra shells duplicadas:
+
+sh
+bash
+bash
+rbash
+rbash
+dash
+dash
+
+eliminar las shell duplicadas:
+
+awk -F "/" '/^\// {print $NF}' /etc/shells | uniq
+
+https://geekland.eu/uso-del-comando-awk-en-linux-y-unix-con-ejemplos/
+
+
+
+
+
+

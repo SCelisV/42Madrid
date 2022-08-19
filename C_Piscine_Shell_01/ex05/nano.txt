@@ -1,0 +1,1 @@
+Al ejecutar nano -L no te crea un salto de línea

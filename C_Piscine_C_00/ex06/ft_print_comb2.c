@@ -1,24 +1,43 @@
-#include<stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scelis <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/17 19:56:18 by scelis            #+#    #+#             */
+/*   Updated: 2022/08/17 19:59:40 by scelis           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<unistd.h>
 
-void ft_print_comb2( void )
+void	ft_putchar(char c)
 {
-	int n[2];
-	
-	n[0] = 0;
+	write (1, &c, 1);
+}
 
-	while(n[0] <= 28)
+void	ft_print_comb2(void)
+{
+	int	n [2];
+
+	n [0] = -1;
+	while (n [0]++ < 98)
 	{
-		if ( n[0] < 10 )
+		n [1] = n [0] + 1;
+		while (n [1] <= 99)
 		{
-			printf("%d, ", n[0]);
-
+			ft_putchar ((n [0] / 10) + '0');
+			ft_putchar ((n [0] % 10) + '0');
+			ft_putchar (' ');
+			ft_putchar ((n [1] / 10) + '0');
+			ft_putchar ((n [1] % 10) + '0');
+			if (!(n[0] == 98 && n[1] == 99))
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
+			n [1]++;
 		}
-		else
-		{ 
-			printf("%d, ", n[0]);
-			//write(1, &n[0], 1);
-		}
-			n[0]++;
 	}
 }
