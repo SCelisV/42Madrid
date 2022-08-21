@@ -1,0 +1,32 @@
+
+
+pointer  -> variable para gestionar la memoria
+
+
+Memoria virtual --> al ejecutar un proceso este tiene acceso a la totalidad de la memoria.
+
+Stack -> Pila lo más alta de la memoria.  Desciende 
+
+HEAD --> empieza de las direcciones más abajo y sube
+
+La memoria virtual esta mapeada  que (Swap )--> se establece una correspondencia con la memoria fisica o bien en la memoria RMA ó en el disco duro
+
+swap 
+
+file 32bits
+4GB de RAM
+Ordenador 4G
+
+algo va a mapear los 4G virtuales hacia lo físico.
+
+
+
+Si no tenemos nada de memoria fisica en HD ni en la Memoria e intentamos coger 4G el ordenador se cuelga y no se puede gestionar.
+
+2 procesos ejecutados al mismo tiempo van a tener las mismas direcciones porque virtualmente hablando 
+
+MLU
+
+
+
+
