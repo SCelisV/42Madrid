@@ -1,0 +1,12 @@
+*******************************************************************
+* O_O: SOLO TIENES 10 min PARA QUE TE PUEDAS QUEDAR EN EL EXÁMEN. *
+*******************************************************************
+
+1. Para logarte, debes entrar en el ordenador con exam, exam
+2. Buscar la iTerm(terminal) del mac 
+3. Buscar la carpeta docs los Readme.* que estan en diferentes idiomas y que incluyen las explicaciones de como entrar. - esta bien que las leas rápidamente pueden haber cambiado.
+4. ejecutar el comando: examshell
+5. después saldrá una información en la que te tienes que volver a logar:
+   algo como kinit login; aquí tienes que colocar tu nombre de usuario y luego el passwordque tengas.
+6. VOLVER A ESCRIBIR examshell
+7. oila!!
