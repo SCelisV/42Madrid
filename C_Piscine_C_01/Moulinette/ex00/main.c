@@ -19,3 +19,4 @@ int	main(void)
 	ft_ft(&nbr);
 	return (0);
 }
+

@@ -26,5 +26,3 @@ int	main(void)
 	ft_swap(ptr, ptr2);
 	return (0);
 }
-
-
